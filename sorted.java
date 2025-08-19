@@ -97,3 +97,46 @@ public class sorted {
                           stairsSearch(matrix, key);
     }
 }
+
+doing pratice question of sorted matrix
+
+public class sorted {
+    public static int pratice(int matrix[][]){
+        int sum =0;
+        for(int j =0 ; j<matrix[0].length;j++){
+            sum += matrix[1][j];
+        }
+        System.out.println("Sum of the number :- " + sum);
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int matrix[][] = {{1,4,9},
+                          {11,4,3},
+                           {2,2,3}};
+                           pratice(matrix);
+    }
+}
+
+new question
+
+public class sorted {
+    public static int pratices(int matrix[][]){
+        int countof7 = 0;
+        for(int i=0; i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if (matrix[i][j] == 7) {
+                    countof7++;
+                    
+                }
+            }
+        }
+        System.out.println("There are total number of 7 is :- " + countof7);
+        return countof7;
+    }
+
+    public static void main(String[] args) {
+        int matrix[][]= {{7,7,8},{8,7,7}};
+        pratices(matrix);
+    }
+}
