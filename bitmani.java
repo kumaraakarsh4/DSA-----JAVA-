@@ -1,90 +1,104 @@
-it is AND operator ( & )
-public class bitmani {
-    public static void main(String[] args) {
-        System.out.println(5 & 6);
-    }
+// it is AND operator ( & )
+// public class bitmani {
+//     public static void main(String[] args) {
+//         System.out.println(5 & 6);
+//     }
     
-}
+// }
 
-it is OR operator ( | )
+// it is OR operator ( | )
 
-public class bitmani {
+// public class bitmani {
 
-    public static void main(String[] args) {
-        System.out.println(5 | 6);
-    }
-}
+//     public static void main(String[] args) {
+//         System.out.println(5 | 6);
+//     }
+// }
 
-it is XOR operator ( ^ )
+// it is XOR operator ( ^ )
 
-public class bitmani {
+// public class bitmani {
 
-    public static void main(String[] args) {
-        System.out.println(5 ^ 6);
-    }
-}
+//     public static void main(String[] args) {
+//         System.out.println(5 ^ 6);
+//     }
+// }
 
-it is one's compliment ( ~ )
+// it is one's compliment ( ~ )
 
-public class bitmani {
+// public class bitmani {
 
-    public static void main(String[] args) {
-        System.out.println((~-5));
-    }
-}
+//     public static void main(String[] args) {
+//         System.out.println((~-5));
+//     }
+// }
 
-it is binary left shift operator ( << )
+// it is binary left shift operator ( << )
 
-public class bitmani {
+// public class bitmani {
 
-    public static void main(String[] args) {
-        System.out.println(5 << 2);
-    }
-} 
+//     public static void main(String[] args) {
+//         System.out.println(5 << 2);
+//     }
+// } 
 
-it is binary right shift operator ( >> )
+// it is binary right shift operator ( >> )
 
-public class bitmani {
+// public class bitmani {
 
-    public static void main(String[] args) {
-        System.out.println(6>>1);
-    }
-}
+//     public static void main(String[] args) {
+//         System.out.println(6>>1);
+//     }
+// }
 
-question of bitmanipulation of odd and even
+// question of bitmanipulation of odd and even
 
-public class bitmani {
+// public class bitmani {
 
-    public static void oddEven(int n ){
-        int bitmask = 1;
-        if ((n & bitmask) == 0) {
-            System.out.println("the number is even");
+//     public static void oddEven(int n ){
+//         int bitmask = 1;
+//         if ((n & bitmask) == 0) {
+//             System.out.println("the number is even");
             
-        }
-        else{
-            System.out.println("The number is odd");
-        }
-    }
-    public static void main(String[] args) {
-        oddEven(10);
-    }
-}
+//         }
+//         else{
+//             System.out.println("The number is odd");
+//         }
+//     }
+//     public static void main(String[] args) {
+//         oddEven(10);
+//     }
+// }
 
-doing the bitmanipulation question of odd and even
+// doing the bitmanipulation question of odd and even
+
+// public class bitmani {
+
+//     public static void oddsEven(int n){
+//         int bitmask = 1;
+//         if ((n & bitmask) == 0) {
+//             System.out.println("The number is even");
+            
+//         }
+//         else{
+//             System.out.println("The number is odd");
+//         }
+//     }
+//     public static void main(String[] args) {
+//         oddsEven(13);
+//     }
+// }
+
+// question of set ith bit
 
 public class bitmani {
-
-    public static void oddsEven(int n){
-        int bitmask = 1;
-        if ((n & bitmask) == 0) {
-            System.out.println("The number is even");
-            
-        }
-        else{
-            System.out.println("The number is odd");
-        }
+    public static int setIth(int n , int i){
+        int bitmask = 1<<i;
+        return n | bitmask;
     }
+
     public static void main(String[] args) {
-        oddsEven(13);
+        System.out.println(setIth(5, 2));
+        
     }
 }
