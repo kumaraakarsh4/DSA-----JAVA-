@@ -1,0 +1,132 @@
+public class OOps {
+    public static void main(String[] args) {
+        BankAccount myacc = new BankAccount();
+        myacc.username = "Aakarsh Kumar";
+        myacc.password = "Aakarsh@2002";
+        
+    }
+    
+}
+class BankAccount{
+    public String username;
+    private String password;
+    public void setPassword(String pwd){
+        password = pwd;
+    }
+}
+
+
+Inheritence 
+
+public class OOps {
+
+    public static void main(String[] args) {
+        cat rock = new cat();
+       rock.walk();
+       rock.swim();
+       rock.eat();
+       System.out.println();
+       shark rugu = new shark();
+       rugu.diver();
+       rugu.fins();
+       rugu.eat();
+       System.out.println();
+       parrot mithu = new parrot();
+       mithu.fly();
+       mithu.eat();
+       mithu.breathe();
+       mithu.speak();
+       
+    }
+}
+
+// base class / parent class
+class Animal{
+    String colour;
+    void eat(){
+        System.out.println("She can eats");
+    }
+    void breathe(){
+        System.out.println("She can breathe");
+    }
+    
+
+}
+derived claas / child class
+class fish extends Animal{
+    int fins;
+    void swim(){
+        System.out.println("She can swim");
+    }
+}
+
+Multilevel inheritence 
+
+class Mammal extends Animal{
+    int legs;
+}
+
+class Dog extends Mammal{
+    String breed;
+}
+
+Hierarichal inheritence 
+
+class Mammal extends Animal{
+    void walk(){
+        System.out.println("Can walk");
+    }
+}
+class fish extends Mammal{
+    void swim(){
+        System.out.println("can swim");
+    }
+}
+class bird extends Mammal{
+    void fly(){
+        System.out.println("can fly");
+    }
+}
+
+Hybrid inheritence 
+
+class Mammal extends Animal{
+    void swim(){
+        System.out.println("can swim");
+    }
+}
+class dog extends Mammal{
+    void walk(){
+        System.out.println("can walk");
+    }
+}
+class cat extends dog{
+    void run(){
+        System.out.println("can run");
+    }
+}
+
+
+class fish extends Animal {
+    void fins(){
+        System.out.println("have fins");
+    }
+}
+class shark extends fish{
+    void diver(){
+        System.out.println("she can dive");
+    }
+}
+
+
+
+class bird extends Animal{
+    void fly(){
+        System.out.println("can flying ");
+    }
+}
+class parrot extends bird{
+    void speak(){
+        System.out.println("can speaking");
+    }
+}
