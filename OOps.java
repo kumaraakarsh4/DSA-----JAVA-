@@ -1,10 +1,10 @@
 public class OOps {
-    public static void main(String[] args) {
-        BankAccount myacc = new BankAccount();
+   public static void main(String[] args) {
+    BankAccount myacc = new BankAccount();
         myacc.username = "Aakarsh Kumar";
         myacc.password = "Aakarsh@2002";
         
-    }
+   }
     
 }
 class BankAccount{
