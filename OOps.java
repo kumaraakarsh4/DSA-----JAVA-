@@ -133,6 +133,9 @@ class parrot extends bird{
 
 polymorphism -----
 
+method overloading 
+
+
 public class OOps {
 
     public static void main(String[] args) {
@@ -154,4 +157,25 @@ class calculator{
         return a + b + c;
     }
 
+}
+
+polymorphism (method overriding)
+
+public class OOps {
+
+    public static void main(String[] args) {
+        deer dash = new deer();
+        dash.eat();
+        
+    }
+}
+class Animal{
+    void eat(){
+        System.out.println("Eat anything");
+    }
+}
+class deer extends Animal{
+    void eat(){
+        System.out.println("Eat Grass");
+    }
 }
