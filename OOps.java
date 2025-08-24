@@ -179,3 +179,49 @@ class deer extends Animal{
         System.out.println("Eat Grass");
     }
 }
+
+
+Abstraction 
+
+public class OOps {
+
+    public static void main(String[] args) {
+        Horse h = new Horse();
+        h.eat();
+        h.walk();
+
+        chicken c =  new chicken();
+        c.eat();
+        c.walk();
+        
+        mustang Myhorse = new mustang();
+    }
+}
+abstract class Animal{
+    Animal(){
+    System.out.println("animal constructor called");
+    }
+    void eat(){
+        System.out.println("animal eats");
+    }
+    abstract void walk();
+}
+class Horse extends Animal{
+    Horse(){
+        System.out.println("Horse constructor called");
+    }
+    void walk(){
+        System.out.println("Can walk on 41 legs");
+    }
+}
+class mustang extends Horse{
+    mustang(){
+        System.out.println("mustang constructor called");
+    }
+}
+
+class chicken extends Animal{
+    void walk(){
+        System.out.println("Can walk on 2 legs");
+    }
+}
