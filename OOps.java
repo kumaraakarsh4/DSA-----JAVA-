@@ -225,3 +225,61 @@ class chicken extends Animal{
         System.out.println("Can walk on 2 legs");
     }
 }
+
+Interfaces in abstraction
+
+public class OOps {
+
+    public static void main(String[] args) {
+        Queen qc = new Queen();
+        qc.moves();
+
+        King kc = new King();
+        kc.moves();
+
+        rook rk = new rook();
+        rk.moves();
+        
+    }
+}
+interface chessplayer{
+    void moves();
+}
+class Queen implements chessplayer{
+    public void moves(){
+        System.out.println("it can move up,right,left ,right , diagonal");
+    }
+
+}
+class King implements chessplayer{
+    public void moves(){
+        System.out.println("it can move in all direction");
+    }
+}
+class rook implements chessplayer{
+    public void moves(){
+        System.out.println("it can only move on black and white shade");
+    }
+}
+
+Multiple interfaces in abstraction
+public class OOps {
+
+    public static void main(String[] args) {
+        bear br = new bear();
+        br.eat();
+        
+    }
+}
+interface herbivores{
+    void eat();
+}
+interface carnivores{
+    void eat();
+}
+class bear implements herbivores , carnivores{
+    public void eat(){
+        System.out.println("bear can eat grass and meat also ");
+    }
+}
+
