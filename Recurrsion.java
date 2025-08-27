@@ -178,3 +178,25 @@ public class Recurrsion {
         
     }
 }
+
+next question checking sorted array
+
+public class Recurrsion {
+    public static boolean isSort(int arr[] , int i ){
+        if (i == arr.length-1) {
+            return true;
+            
+        }
+        if (arr[i] > arr[i+1]) {
+            return false;
+            
+        }
+        return isSort(arr, i+1);
+    }
+
+    public static void main(String[] args) {
+        int arr[]={1,5,8,7};
+        System.out.println(isSort(arr, 0));
+        
+    }
+}
