@@ -200,3 +200,27 @@ public class Recurrsion {
         
     }
 }
+
+wap to check first occur of an element at index
+
+public class Recurrsion {
+    public static int firstOcuur(int arr[] , int key , int i){
+        // for base class
+
+        if (i == arr.length) {
+            return -1;
+            
+        }
+        if (key == arr[i]) {
+            return i;
+            
+        }
+        return firstOcuur(arr, key, i+1);
+    }
+
+    public static void main(String[] args) {
+        int arr[]={1,2,4,5,8,9,5};
+        int key =  5;
+        System.out.println("The Value is at index : --- " + firstOcuur(arr, key, 0) );
+    }
+}
