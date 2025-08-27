@@ -224,3 +224,27 @@ public class Recurrsion {
         System.out.println("The Value is at index : --- " + firstOcuur(arr, key, 0) );
     }
 }
+
+next question for check first occur of an element
+
+public class Recurrsion {
+    public static int firstOccu(int arr[] , int key , int i){
+        // for base class
+          if (i == arr.length) {
+            return -1;
+            
+          }
+
+        if (key == arr[i]) {
+            return i;
+            
+        }
+        return firstOccu(arr, key, i+1);
+    }
+
+    public static void main(String[] args) {
+        int arr[]= {1,2,5,7,8,9,4,6,3};
+        int key = 9;
+        System.out.println("The value is at index :-- " + firstOccu(arr, key, 0));
+    }
+}
