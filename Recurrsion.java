@@ -320,3 +320,37 @@ public class Recurrsion {
     System.out.println("The value is found at index :-- " + lastOcc(arr, key, 0));
   }
 }
+
+next question of recurssion
+
+public class Recurrsion {
+  public static int power(int x , int n){
+    if (n == 0) {
+      return 1;
+      
+    }
+    return x*power(x, n-1);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("The final answer is :-- " + power(2, 4));
+    
+  }
+}
+
+next quesrtion
+
+public class Recurrsion {
+  public static int pow(int x , int n){
+    if (n == 0) {
+      return 1;
+      
+    }
+    return x*pow(x, n-1);
+  }
+
+  public static void main(String[] args) {
+    System.out.println("The final answer is :-- " + pow(2, 10));
+    
+  }
+}
