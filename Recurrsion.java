@@ -1,231 +1,231 @@
-// recurssion print in decreasing
+recurssion print in decreasing
 
-// public class Recurrsion {
-//     public static void printDec(int n){
-//         if (n == 1) {
-//             System.out.println(1);
-//             return;
+public class Recurrsion {
+    public static void printDec(int n){
+        if (n == 1) {
+            System.out.println(1);
+            return;
             
-//         }
-//         System.out.print(n + " ");
-//         printDec(n-1);
-//     }
+        }
+        System.out.print(n + " ");
+        printDec(n-1);
+    }
 
-//     public static void main(String[] args) {
-//         int n = 10;
-//         printDec(n);
-//     }
-// }
+    public static void main(String[] args) {
+        int n = 10;
+        printDec(n);
+    }
+}
 
-// recurssion print in increasing
+recurssion print in increasing
 
-// public class Recurrsion {
-//     public static void prinDec(int n){
-//         if (n == 10) {
-//             System.out.println(10);
-//             return;
+public class Recurrsion {
+    public static void prinDec(int n){
+        if (n == 10) {
+            System.out.println(10);
+            return;
             
-//         }
+        }
 
-//         System.out.print(n + " ");
-//         prinDec(n+1);
-//     }
+        System.out.print(n + " ");
+        prinDec(n+1);
+    }
 
-//     public static void main(String[] args) {
-//         int n = 1;
-//         prinDec(n);
-//     }
-// }
+    public static void main(String[] args) {
+        int n = 1;
+        prinDec(n);
+    }
+}
 
-// printing in increasing with 2nd method
+printing in increasing with 2nd method
 
-// public class Recurrsion {
-//     public static void printInc(int n){
-//         if (n == 1) {
-//             System.out.print(1 + " ");
-//             return;
+public class Recurrsion {
+    public static void printInc(int n){
+        if (n == 1) {
+            System.out.print(1 + " ");
+            return;
             
-//         }
-//         printInc(n-1);
-//         System.out.print(n + " ");
-//     }
+        }
+        printInc(n-1);
+        System.out.print(n + " ");
+    }
 
-//     public static void main(String[] args) {
-//         int n =10;
-//         printInc(n);
-//     }
-// }
+    public static void main(String[] args) {
+        int n =10;
+        printInc(n);
+    }
+}
 
-// nexxt question of recurssion calculate factorial
+nexxt question of recurssion calculate factorial
 
-// public class Recurrsion {
-//     public static int  Fact(int n){
-//         if (n == 0) {
-//             return 1;
+public class Recurrsion {
+    public static int  Fact(int n){
+        if (n == 0) {
+            return 1;
             
-//         }
-//         int fnm1 = Fact(n-1);
-//         int fn = n * Fact(n-1);
+        }
+        int fnm1 = Fact(n-1);
+        int fn = n * Fact(n-1);
         
        
-//        return fn;
+       return fn;
 
-//     }
+    }
 
-//     public static void main(String[] args) {
-//         int n = 5;
-//         System.out.println("The final answer is :- " + Fact(n));
-//     }
-// } 
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println("The final answer is :- " + Fact(n));
+    }
+} 
 
-// question of recursion calculate factorial
+question of recursion calculate factorial
 
-// public class Recurrsion {
-//     public static int Fact(int n ){
-//         if (n == 0) {
-//             return 1;
+public class Recurrsion {
+    public static int Fact(int n ){
+        if (n == 0) {
+            return 1;
             
-//         }
-//         int fm = Fact(n-1);
-//         int fn = n*Fact(n-1);
-//         return fn;
-//     }
+        }
+        int fm = Fact(n-1);
+        int fn = n*Fact(n-1);
+        return fn;
+    }
 
-//     public static void main(String[] args) {
-//         int n = 10;
-//         System.out.println("the value is :- " + Fact(n));
-//     }
-// }
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.println("the value is :- " + Fact(n));
+    }
+}
 
-// next question print sum of n natural number
+next question print sum of n natural number
 
-// public class Recurrsion {
-//     public static int calcSum(int n){
-//         if (n == 1) {
-//             return 1;
+public class Recurrsion {
+    public static int calcSum(int n){
+        if (n == 1) {
+            return 1;
             
-//         }
-//        int  snm1 = calcSum(n-1);
-//        int sn = n + snm1;
-//        return sn;
+        }
+       int  snm1 = calcSum(n-1);
+       int sn = n + snm1;
+       return sn;
 
-//     }
+    }
 
-//     public static void main(String[] args) {
-//         int n =5;
-//         System.out.println(calcSum(n));
-//     }
-// }
+    public static void main(String[] args) {
+        int n =5;
+        System.out.println(calcSum(n));
+    }
+}
 
-// printing the fibonaci series
+printing the fibonaci series
 
-// public class Recurrsion {
-//     public static int fibonaci(int n ){
-//         if (n == 0 || n == 1) {
-//             return n;
+public class Recurrsion {
+    public static int fibonaci(int n ){
+        if (n == 0 || n == 1) {
+            return n;
             
-//         }
-//         int fnm = fibonaci(n-1);
-//         int fn = fibonaci(n-2);
-//         int sum = fnm + fn ; 
-//         return sum ;
-//     }
+        }
+        int fnm = fibonaci(n-1);
+        int fn = fibonaci(n-2);
+        int sum = fnm + fn ; 
+        return sum ;
+    }
 
-//     public static void main(String[] args) {
-//         int n = 10;
-//         System.out.println("The sum of number is :- " + fibonaci(n));
-//     }
-// }
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.println("The sum of number is :- " + fibonaci(n));
+    }
+}
 
-// question of fibonaci series
+question of fibonaci series
 
-// public class Recurrsion {
-//     public static int finnac(int n){
-//         if (n == 0 || n == 1) {
-//             return n;
+public class Recurrsion {
+    public static int finnac(int n){
+        if (n == 0 || n == 1) {
+            return n;
             
-//         }
-//         int fnm = finnac(n-1);
-//         int fn = finnac(n-2);
-//         int sum = fnm + fn;
-//         return sum;
-//     }
+        }
+        int fnm = finnac(n-1);
+        int fn = finnac(n-2);
+        int sum = fnm + fn;
+        return sum;
+    }
 
-//     public static void main(String[] args) {
-//         int n = 11;
-//         System.out.println("The sum of number is :-- " + finnac(n));
-//     }
-// }
+    public static void main(String[] args) {
+        int n = 11;
+        System.out.println("The sum of number is :-- " + finnac(n));
+    }
+}
 
-// next recurssion question check sorted array
+next recurssion question check sorted array
 
-// public class Recurrsion {
-//     public static boolean isSorted(int arr[] , int i){
-//         if (i == arr.length-1) {
-//             return true;
+public class Recurrsion {
+    public static boolean isSorted(int arr[] , int i){
+        if (i == arr.length-1) {
+            return true;
             
-//         }
-//         if (arr[i] > arr[i+1]) {
-//             return false;
+        }
+        if (arr[i] > arr[i+1]) {
+            return false;
             
-//         }
-//         return isSorted(arr, i+1);
-//     }
+        }
+        return isSorted(arr, i+1);
+    }
 
-//     public static void main(String[] args) {
-//         int arr[] ={1,2,3,4,5};
-//        System.out.println( isSorted(arr, 0));
+    public static void main(String[] args) {
+        int arr[] ={1,2,3,4,5};
+       System.out.println( isSorted(arr, 0));
         
-//     }
-// }
+    }
+}
 
-// next question checking sorted array
+next question checking sorted array
 
-// public class Recurrsion {
-//     public static boolean isSort(int arr[] , int i ){
-//         if (i == arr.length-1) {
-//             return true;
+public class Recurrsion {
+    public static boolean isSort(int arr[] , int i ){
+        if (i == arr.length-1) {
+            return true;
             
-//         }
-//         if (arr[i] > arr[i+1]) {
-//             return false;
+        }
+        if (arr[i] > arr[i+1]) {
+            return false;
             
-//         }
-//         return isSort(arr, i+1);
-//     }
+        }
+        return isSort(arr, i+1);
+    }
 
-//     public static void main(String[] args) {
-//         int arr[]={1,5,8,7};
-//         System.out.println(isSort(arr, 0));
+    public static void main(String[] args) {
+        int arr[]={1,5,8,7};
+        System.out.println(isSort(arr, 0));
         
-//     }
-// }
+    }
+}
 
-// wap to check first occur of an element at index
+wap to check first occur of an element at index
 
-// public class Recurrsion {
-//     public static int firstOcuur(int arr[] , int key , int i){
-//         // for base class
+public class Recurrsion {
+    public static int firstOcuur(int arr[] , int key , int i){
+        // for base class
 
-//         if (i == arr.length) {
-//             return -1;
+        if (i == arr.length) {
+            return -1;
             
-//         }
-//         if (key == arr[i]) {
-//             return i;
+        }
+        if (key == arr[i]) {
+            return i;
             
-//         }
-//         return firstOcuur(arr, key, i+1);
-//     }
+        }
+        return firstOcuur(arr, key, i+1);
+    }
 
-//     public static void main(String[] args) {
-//         int arr[]={1,2,4,5,8,9,5};
-//         int key =  5;
-//         System.out.println("The Value is at index : --- " + firstOcuur(arr, key, 0) );
-//     }
-// }
+    public static void main(String[] args) {
+        int arr[]={1,2,4,5,8,9,5};
+        int key =  5;
+        System.out.println("The Value is at index : --- " + firstOcuur(arr, key, 0) );
+    }
+}
 
-// next question for check first occur of an element
+next question for check first occur of an element
 
 public class Recurrsion {
     public static int firstOccu(int arr[] , int key , int i){
@@ -400,6 +400,29 @@ public class Recurrsion {
   public static void main(String[] args) {
     String str = "aakarshhkumar";
     duplicate(str, 0,new StringBuilder(""), new boolean[26]);
+    
+  }
+}
+
+last question of recurssion binary problem
+
+public class Recurrsion {
+  public static void printBinary(int n , int lastplace , String str){
+    if (n == 0) {
+      System.out.println(str);
+      return;
+      
+    }
+    printBinary(n-1, 0, str+"0");
+    if (lastplace == 0) {
+      printBinary(n-1, 1, str+"1");
+      
+    }
+
+  }
+
+  public static void main(String[] args) {
+    printBinary(2, 0, "");
     
   }
 }
