@@ -51,3 +51,51 @@ public class Backtracking {
 
     }
 }
+
+NEXT QUESTION OF BACKTRACKING FINDING ALL SUBSET OF ARRAY
+
+public class Backtracking {
+    public static void findSubset(String str , String ans , int i){
+        if (i == str.length()) {
+            if (ans.length() == 0) {
+                System.out.println("Null");
+                
+            }else{
+                System.out.println(ans);
+            }
+            return;
+            
+        }
+        findSubset(str, ans+str.charAt(i), i+1);
+        findSubset(str, ans, i+1);
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+        findSubset(str, "", 0);
+    }
+}
+
+NEXT QUESTION OF BACKTRACKING FINDING ALL SUBSET OF ARRAY
+
+public class Backtracking {
+    public static void findSub(String str , String ans ,  int i){
+        if (i == str.length()) {
+            if (ans.length() == 0) {
+                System.out.println("Null");
+                
+            }else{
+                System.out.println(ans);
+            }
+            return;
+            
+        }
+        findSub(str, ans+str.charAt(i), i+1);
+        findSub(str, ans, i+1);
+    }
+
+    public static void main(String[] args) {
+        String str = "def";
+        findSub(str, "", 0);
+    }
+}
