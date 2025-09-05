@@ -99,3 +99,47 @@ public class Backtracking {
         findSub(str, "", 0);
     }
 }
+
+BACKTRACKING QUESTION PERMUTATION
+
+public class Backtracking {
+    public static void findPermut(String str , String ans){
+        if (str.length() == 0) {
+            System.out.println(ans);
+            return;
+            
+        }
+        for(int i=0;i<str.length();i++){
+            char curr = str.charAt(i);
+            String Newstr = str.substring(0, i) + str.substring(i+1);
+            findPermut(Newstr, ans+curr);
+        }
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+        findPermut(str, "");
+    }
+}
+
+BACKTRACKING NEXT QUESTION PERMUTATION
+
+public class Backtracking {
+    public static void findPerm(String str , String ans){
+        if (str.length() == 0) {
+            System.out.println(ans);
+            return;
+            
+        }
+        for(int i =0;i<str.length();i++){
+            char curr = str.charAt(i);
+            String Newstr = str.substring(0, i) + str.substring(i+1);
+            findPerm(Newstr, ans+curr);
+        }
+    }
+
+    public static void main(String[] args) {
+        String str = "def";
+        findPerm(str, "");
+    }
+}
