@@ -64,3 +64,31 @@ public class Arraylist {
 
     }
 }
+
+NEXT QUESTION SWAP TWO  NUMBERS IN ARRAYLIST
+
+import java.util.ArrayList;
+
+public class Arraylist {
+    public static void swap(ArrayList<Integer> list , int idx1 , int idx2){
+        int temp = list.get(idx1); // we store index 1 value in temp
+        list.set(idx1, list.get(idx2)); // we set index 3 value in index 1
+        list.set(idx2 , temp); // then we store index 2 value in temp
+
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer>list = new ArrayList<>();
+        list.add(2);
+        list.add(5);
+        list.add(9);
+        list.add(3);
+        list.add(6);
+        System.out.println(list);
+
+        int idx1 = 1 , idx2 = 3;
+        swap(list, idx1, idx2);
+        System.out.println(list);
+
+    }
+}
