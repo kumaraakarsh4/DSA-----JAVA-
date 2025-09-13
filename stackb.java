@@ -94,3 +94,22 @@ public class stackb {
     }
 }
 }
+
+ IMPLEMENTING THE STACK WITH THE HELP OF JAVA COLLECTION FRAMEWORK
+
+import java.util.*;
+public class stackb {
+    public static void main(String[] args) {
+        Stack <Integer> s = new Stack<>();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        s.push(4);
+
+        while (!s.empty()) {
+            System.out.println(s.peek());
+            s.pop();
+            
+        }
+    }
+}
