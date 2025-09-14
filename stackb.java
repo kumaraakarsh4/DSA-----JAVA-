@@ -254,3 +254,33 @@ public class stackb {
 
     }
 }
+
+ PRINTING THE NEXT GREATER ELEMENT 
+import java.util.*;
+public class stackb {
+
+    public static void main(String[] args) {
+        int arr[] = {4,7,0,1,2};
+        Stack<Integer> s = new Stack<>();
+        int nexGreater[] = new int[arr.length];
+        for(int i=arr.length-1; i>=0;i--){
+            while (!s.isEmpty() && arr[s.peek()] <= arr[i]) {
+                s.pop();
+                
+            }
+            if (s.isEmpty()) {
+                nexGreater[i] = -1;
+                
+            }else{
+                nexGreater[i] = arr[s.peek()];
+            }
+             s.push(i);
+        } 
+        for(int i =0;i<arr.length;i++){
+        System.out.print(nexGreater[i] + " ");
+     }
+     System.out.println();
+
+}
+     
+}
