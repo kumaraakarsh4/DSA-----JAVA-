@@ -173,3 +173,46 @@ public class stackb {
        
     }
 }
+
+ REVERSE A STACK
+
+import java.util.*;
+public class stackb {
+    public static void pushAtBottom(Stack<Integer> s , int data){
+        if (s.isEmpty()) {
+            s.push(data);    // we made this function to push the element in the bottom
+            return;
+            
+        }
+        int top = s.pop();
+        pushAtBottom(s, data);
+        s.push(top);
+    }
+    public static void reverseStack(Stack<Integer> s){
+        if (s.isEmpty()) {
+           return;                   // we call the bottom function in reverse stack
+            
+        }
+        int top = s.pop();
+        reverseStack(s);
+        pushAtBottom(s, top);
+    }
+
+    public static void printStack(Stack<Integer> s){
+        while (!s.isEmpty()) {
+            System.out.println(s.pop());   // we print our reverse stack
+            
+        }
+    }
+
+    public static void main(String[] args) {
+        Stack<Integer> s = new Stack<>();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        
+        reverseStack(s);
+        printStack(s);
+        
+    }
+}
