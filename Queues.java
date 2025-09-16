@@ -58,8 +58,7 @@
     
 // }
 
-
-// next question
+// Next Adding question
 
 public class Queues {
     public static class Queue{
@@ -83,41 +82,31 @@ public class Queues {
             rear =  rear +1;
             arr[rear] = data;
         }
-
-        public static int remove(){
-            if (isEmpty()) {
-                System.out.println("Queue is empty");
-                return -1;
-                
+         public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("[");
+            for (int i = 0; i <= rear; i++) {
+                sb.append(arr[i]);
+                if (i < rear) sb.append(", ");
             }
-            int front = arr[0];
-            for(int i=0;i<rear;i++){
-                arr[i] = arr[i+1];
-            }
-            rear = rear -1;
-            return front;
-        }
-        public static int peek(){
-            if (isEmpty()) {
-                System.out.println("Queue is empty");
-                return -1;
-                
-            }
-            return arr[0];
+            sb.append("]");
+            return sb.toString();
         }
     }
     public static void main(String[] args) {
-        Queue q = new Queue(4);
+        Queue q = new Queue(5);
         q.Add(1);
         q.Add(2);
         q.Add(3);
         q.Add(4);
-
-        while (!q.isEmpty()) {
-            System.out.println(q.peek());
-            q.remove();
-            
-        }
+        q.Add(5);
+        System.out.println(q);
     }
-    
 }
+
+
+
+
+
+
+
