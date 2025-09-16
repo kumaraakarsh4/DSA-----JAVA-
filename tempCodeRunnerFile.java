@@ -1,1 +1,1 @@
-numbers
+head.next.next.next = head;
