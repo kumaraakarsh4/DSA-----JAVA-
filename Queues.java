@@ -561,31 +561,55 @@
 
 // QUEUE UISNG DEQUE QUESTION
 
+// import java.util.*;
+// public class Queues {
+
+//     static class Queue{
+//         Deque<Integer> d = new LinkedList<>();
+//         public void add(int data){
+//             d.addLast(data);
+//         }
+//         public int remove(){
+//             return d.removeFirst();
+//         }
+//         public int peek(){
+//             return d.getFirst();
+//         }
+//     }
+//     public static void main(String[] args) {
+//         Queue q = new Queue();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         System.out.println("peek element :- " + q.peek());
+//         System.out.println(q.remove());
+//         System.out.println(q.remove());
+//         System.out.println(q.remove());
+//     }
+// }
+
+// GENERATE BINARY NUMBERS
+
 import java.util.*;
 public class Queues {
 
-    static class Queue{
-        Deque<Integer> d = new LinkedList<>();
-        public void add(int data){
-            d.addLast(data);
-        }
-        public int remove(){
-            return d.removeFirst();
-        }
-        public int peek(){
-            return d.getFirst();
+    static void printBinary(int n){
+        Queue<String> q = new LinkedList<String>();
+        q.add("1");
+        while (n--> 0) {
+            String s1 = q.poll();
+           
+            System.out.println(s1);
+            String s2 = s1;
+            q.add(s1 + "0");
+            q.add( s2 + "1");
+
+            
         }
     }
     public static void main(String[] args) {
-        Queue q = new Queue();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        System.out.println("peek element :- " + q.peek());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
+        int n = 5;
+        printBinary(n);
     }
 }
-
 
