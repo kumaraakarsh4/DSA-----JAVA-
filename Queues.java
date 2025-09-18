@@ -437,44 +437,76 @@
 
 // INTERLEAVE 2 HALF OF QUEUE
 
+// import java.util.*;
+// public class Queues {
+//     public static void interLeave(Queue<Integer> q){
+//         Queue<Integer> firstHalf = new LinkedList<>();
+//         int size = q.size();
+//         for(int i=0;i<size/2;i++){
+//             firstHalf.add(q.remove());
+//         }
+//         while (!firstHalf.isEmpty()) {
+//             q.add(firstHalf.remove());
+//             q.add(q.remove());
+            
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         Queue<Integer> q = new LinkedList<>();
+//         q.add(2);
+//         q.add(4);
+//         q.add(6);
+//         q.add(8);
+//         q.add(10);
+//         q.add(12);
+//         q.add(14);
+//         q.add(16);
+       
+//         interLeave(q);
+//         while (!q.isEmpty()) {
+//             System.out.print(q.remove() + " ");
+            
+//         }
+//         System.out.println();
+       
+        
+
+//     }
+// }
+   
+// REVERSE OF QUEUE
 import java.util.*;
 public class Queues {
-    public static void interLeave(Queue<Integer> q){
-        Queue<Integer> firstHalf = new LinkedList<>();
-        int size = q.size();
-        for(int i=0;i<size/2;i++){
-            firstHalf.add(q.remove());
+
+    public static void reverse(Queue<Integer> q){
+        Stack<Integer> s = new Stack<>();
+        while (!q.isEmpty()) {
+            s.push(q.remove());
+            
         }
-        while (!firstHalf.isEmpty()) {
-            q.add(firstHalf.remove());
-            q.add(q.remove());
+        while (!s.isEmpty()) {
+            q.add(s.pop());
             
         }
     }
-
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer>  q = new LinkedList<>();
+        q.add(1);
         q.add(2);
+        q.add(3);
         q.add(4);
-        q.add(6);
-        q.add(8);
-        q.add(10);
-        q.add(12);
-        q.add(14);
-        q.add(16);
-       
-        interLeave(q);
+        q.add(5);
+
+        reverse(q);
         while (!q.isEmpty()) {
             System.out.print(q.remove() + " ");
             
         }
         System.out.println();
-       
-        
-
+    
     }
 }
-   
 
 
 
