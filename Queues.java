@@ -476,35 +476,57 @@
 // }
    
 // REVERSE OF QUEUE
+// import java.util.*;
+// public class Queues {
+
+//     public static void reverse(Queue<Integer> q){
+//         Stack<Integer> s = new Stack<>();
+//         while (!q.isEmpty()) {
+//             s.push(q.remove());
+            
+//         }
+//         while (!s.isEmpty()) {
+//             q.add(s.pop());
+            
+//         }
+//     }
+//     public static void main(String[] args) {
+//         Queue<Integer>  q = new LinkedList<>();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+
+//         reverse(q);
+//         while (!q.isEmpty()) {
+//             System.out.print(q.remove() + " ");
+            
+//         }
+//         System.out.println();
+    
+//     }
+// }
+
+// USING DEQUE
+
 import java.util.*;
 public class Queues {
 
-    public static void reverse(Queue<Integer> q){
-        Stack<Integer> s = new Stack<>();
-        while (!q.isEmpty()) {
-            s.push(q.remove());
-            
-        }
-        while (!s.isEmpty()) {
-            q.add(s.pop());
-            
-        }
-    }
     public static void main(String[] args) {
-        Queue<Integer>  q = new LinkedList<>();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        q.add(5);
-
-        reverse(q);
-        while (!q.isEmpty()) {
-            System.out.print(q.remove() + " ");
-            
-        }
-        System.out.println();
-    
+        Deque<Integer> d = new LinkedList<>();
+        d.addFirst(1);
+        d.addLast(2);
+        d.addLast(3);
+        d.addLast(4);
+        d.addLast(5);
+        System.out.println(d);
+        d.removeFirst();
+        System.out.println(d);
+        d.removeLast();
+        System.out.println(d); // 2 3 4
+        System.out.println("first el:- " + d.getFirst());
+        System.out.println("last el:- " + d.getLast());
     }
 }
 
