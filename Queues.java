@@ -590,26 +590,26 @@
 
 // GENERATE BINARY NUMBERS
 
-import java.util.*;
-public class Queues {
+// import java.util.*;
+// public class Queues {
 
-    static void printBinary(int n){
-        Queue<String> q = new LinkedList<String>();
-        q.add("1");
-        while (n--> 0) {
-            String s1 = q.poll();
+//     static void printBinary(int n){
+//         Queue<String> q = new LinkedList<String>();
+//         q.add("1");
+//         while (n--> 0) {
+//             String s1 = q.poll();
            
-            System.out.println(s1);
-            String s2 = s1;
-            q.add(s1 + "0");
-            q.add( s2 + "1");
+//             System.out.println(s1);
+//             String s2 = s1;
+//             q.add(s1 + "0");
+//             q.add( s2 + "1");
 
             
-        }
-    }
-    public static void main(String[] args) {
-        int n = 5;
-        printBinary(n);
-    }
-}
+//         }
+//     }
+//     public static void main(String[] args) {
+//         int n = 5;
+//         printBinary(n);
+//     }
+// }
 
