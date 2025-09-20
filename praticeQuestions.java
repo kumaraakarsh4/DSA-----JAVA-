@@ -63,17 +63,29 @@
 
 // BITMANIPULATION QUESTION PRACTICE
 
+// public class praticeQuestions {
+
+//     public static void main(String[] args) {
+//         int x =3  ;
+//         int y =4;
+//         System.out.println("Before swap x = " + x + "y = " + y);
+//         x= x^y;
+//         y=x^y;
+//         x=x^y;
+//         System.out.println("After swap x =" + x + "y =" + y);
+
+//     }
+// }
+
+
+// NEXT QUESTION CONVERT UPPERCASE INTO LOWERCASE
+
 public class praticeQuestions {
 
     public static void main(String[] args) {
-        int x =3  ;
-        int y =4;
-        System.out.println("Before swap x = " + x + "y = " + y);
-        x= x^y;
-        y=x^y;
-        x=x^y;
-        System.out.println("After swap x =" + x + "y =" + y);
-
+        for(char ch = 'A';ch<'Z';ch++ ){
+            System.out.print((char)  (ch | ' '));
+        }
     }
 }
 
