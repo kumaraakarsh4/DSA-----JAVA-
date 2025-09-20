@@ -80,12 +80,26 @@
 
 // NEXT QUESTION CONVERT UPPERCASE INTO LOWERCASE
 
+// public class praticeQuestions {
+
+//     public static void main(String[] args) {
+//         for(char ch = 'A';ch<'Z';ch++ ){
+//             System.out.print((char)  (ch | ' '));
+//         }
+//     }
+// }
+
+// NEXT QUESTION BITMANIPULATION
+
 public class praticeQuestions {
 
     public static void main(String[] args) {
-        for(char ch = 'A';ch<'Z';ch++ ){
-            System.out.print((char)  (ch | ' '));
-        }
+        int x =6;
+        System.out.println(x + "+" + 1 +  "is" + -~x );
+         x = -4;
+        System.out.println(x + "+" + 1 +  "is" + -~x);
+         x = 0;
+        System.out.println(x + "+" + 1 +  "is" + -~x);
     }
 }
 
