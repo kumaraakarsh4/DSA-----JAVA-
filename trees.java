@@ -290,6 +290,63 @@
 // }
 
 // POST ORDER TRAVERSAL IN TREE
+// import java.util.*;
+// public class trees {
+
+//     public class preInPost{
+//         public static void pip(int n){
+//             if (n==0)  return ;
+//             System.out.println("pre " + n);
+//             pip(n-1);
+//             System.out.println("in " + n);
+//             pip(n-1);
+//             System.out.println("pre " + n);
+                
+            
+//         }
+//     }
+//           public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public  Node(int val){
+//             this.val = val;
+
+//         }
+       
+//     }
+//     public static void postOrder(Node root){
+//         if (root == null) {
+//             return;
+            
+//         }
+       
+//         postOrder(root.left);
+        
+//         postOrder(root.right);
+//          System.out.println(root.val);
+//     }
+
+// public static void main(String[] args) {
+//     Node root = new Node(1);
+//         Node a = new Node(2);
+//         Node b = new Node(3);
+//         root.left = a;
+//         root.right = b;
+//         Node c = new Node(4);
+//         Node d = new Node(5);
+//         a.left = c ;
+//         a.right = d;
+//         Node e = new Node(6);
+//         Node f = new Node(7);
+//         b.left = e;
+//         b.right = f;
+//         postOrder(root);
+    
+// }
+// }
+
+// PRINTING NTH LEVEL ELEMENT
 import java.util.*;
 public class trees {
 
@@ -315,16 +372,17 @@ public class trees {
         }
        
     }
-    public static void postOrder(Node root){
-        if (root == null) {
-            return;
-            
-        }
-       
-        postOrder(root.left);
-        
-        postOrder(root.right);
-         System.out.println(root.val);
+    public static void nthLevel(Node root , int n){
+      if (root == null){
+        return;
+      }
+      if (n==1){
+         System.out.print(root.val + " ");
+         return;
+      } 
+      
+      nthLevel(root.left, n-1);
+      nthLevel(root.right, n-1);
     }
 
 public static void main(String[] args) {
@@ -341,7 +399,7 @@ public static void main(String[] args) {
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        postOrder(root);
+       nthLevel(root, 3);
     
 }
 }
