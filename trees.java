@@ -520,6 +520,52 @@
 // }
 // }
 
+// import java.util.*;
+// public class trees {
+
+  
+//           public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public  Node(int val){
+//             this.val = val;
+
+//         }
+       
+//     }
+//     public static int height(Node root){
+//         if(root == null || root.left == null && root.right==null) return 0;
+//         return 1 + Math.max(height(root.left), height(root.right));
+//     }
+//     public static boolean balanceTree(Node root){
+//         if(root == null) return true;
+//         int lh = height(root.left);
+//         int rh = height(root.right);
+//         int d = lh - rh;
+//         if(d<0) d = -d;
+//         if(d<1) return false;
+//         return (balanceTree(root.left) && balanceTree(root.right));
+//     }
+
+//     public static void main(String[] args) {
+//     Node root = new Node(3);
+//         Node a = new Node(9);
+//         Node b = new Node(20);
+//         root.left = a;
+//         root.right = b;
+       
+//         Node e = new Node(15);
+//         Node f = new Node(7);
+//         b.left = e;
+//         b.right = f;
+//         height(root);
+//        System.out.println(balanceTree(root));
+// }
+// }
+
+//NEXT QUESTION CHECKING BALANCED TREE
+
 import java.util.*;
 public class trees {
 
@@ -541,7 +587,14 @@ public class trees {
     public static boolean balanceTree(Node root){
         if(root == null) return true;
         int lh = height(root.left);
+        if (root.left!=null) {
+            lh++;
+            
+        }
         int rh = height(root.right);
+        if (root.right!=null) {
+           rh++; 
+        }
         int d = lh - rh;
         if(d<0) d = -d;
         if(d<1) return false;
