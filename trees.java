@@ -566,53 +566,112 @@
 
 //NEXT QUESTION CHECKING BALANCED TREE
 
-import java.util.*;
-public class trees {
+// import java.util.*;
+// public class trees {
 
   
-          public static class Node{
+//           public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public  Node(int val){
+//             this.val = val;
+
+//         }
+       
+//     }
+//     public static int height(Node root){
+//         if(root == null || root.left == null && root.right==null) return 0;
+//         return 1 + Math.max(height(root.left), height(root.right));
+//     }
+//     public static boolean balanceTree(Node root){
+//         if(root == null) return true;
+//         int lh = height(root.left);
+//         if (root.left!=null) {
+//             lh++;
+            
+//         }
+//         int rh = height(root.right);
+//         if (root.right!=null) {
+//            rh++; 
+//         }
+//         int d = lh - rh;
+//         if(d<0) d = -d;
+//         if(d<1) return false;
+//         return (balanceTree(root.left) && balanceTree(root.right));
+//     }
+
+//     public static void main(String[] args) {
+//     Node root = new Node(3);
+//         Node a = new Node(9);
+//         Node b = new Node(20);
+//         root.left = a;
+//         root.right = b;
+       
+//         Node e = new Node(15);
+//         Node f = new Node(7);
+//         b.left = e;
+//         b.right = f;
+//         height(root);
+//        System.out.println(balanceTree(root));
+// }
+// }
+
+// ZIG ZAG PRINTING OF TREE
+
+public class trees {
+
+    public static class Node{
         int val;
         Node left;
         Node right;
         public  Node(int val){
             this.val = val;
 
-        }
-       
+}
     }
-    public static int height(Node root){
-        if(root == null || root.left == null && root.right==null) return 0;
-        return 1 + Math.max(height(root.left), height(root.right));
-    }
-    public static boolean balanceTree(Node root){
-        if(root == null) return true;
-        int lh = height(root.left);
-        if (root.left!=null) {
-            lh++;
+    public static void nthlevel(Node root , int n){
+        if (root == null) {
+            return;
             
         }
-        int rh = height(root.right);
-        if (root.right!=null) {
-           rh++; 
+        if (n==1) {
+            System.out.print(root.val + " ");
+            
         }
-        int d = lh - rh;
-        if(d<0) d = -d;
-        if(d<1) return false;
-        return (balanceTree(root.left) && balanceTree(root.right));
+        nthlevel(root.left, n-1);
+        nthlevel(root.right, n-1);
     }
-
+    public static int height(Node root){
+        if (root == null) {
+            return 0;
+            
+        }
+        if (root.left==null && root.right==null) {
+            return 0;
+            
+        }
+        return 1+ Math.max(height(root.left), height(root.right));
+    }
     public static void main(String[] args) {
-    Node root = new Node(3);
-        Node a = new Node(9);
-        Node b = new Node(20);
+        Node root = new Node(1);
+        Node a = new Node(2);
+        Node b = new Node(3);
         root.left = a;
         root.right = b;
-       
-        Node e = new Node(15);
+        Node c = new Node(4);
+        Node d = new Node(5);
+        a.left = c ;
+        a.right = d;
+        Node e = new Node(6);
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        height(root);
-       System.out.println(balanceTree(root));
-}
+        int level = height(root)+1;
+        for(int i=1;i<=level;i++){
+            nthlevel(root, i);
+            System.out.println();
+        }
+        
+    }
 }
