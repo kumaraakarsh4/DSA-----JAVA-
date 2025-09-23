@@ -722,6 +722,67 @@
 //     }
 // }
 
+// import java.util.*;
+// public class trees {
+//     public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public Node(int val){
+//             this.val = val;
+//         }
+//     }
+//     public static boolean isSubTree(Node root , Node Subroot){
+//         if (root  == null) {
+//             return false;
+            
+//         }
+//         if (root.val == Subroot.val) {
+//             if (isIdentical(root ,Subroot)) {
+//                 return true;
+                
+//             }
+            
+//         }
+//         boolean leftans = isSubTree(root.left, Subroot);
+//         boolean rightans = isSubTree(root.right, Subroot);
+//         return leftans || rightans;
+//     }
+//     public static boolean isIdentical(Node node , Node Subroot){
+//         if (node == null && Subroot==null) {
+//             return true;
+            
+//         }else if (node == null || Subroot == null || node.val!= Subroot.val) {
+//             return false;
+            
+//         }
+//         if (!isIdentical(node.left, Subroot.left)) {
+//             return false;
+            
+//         }
+//         if (!isIdentical(node.right, Subroot.right)) {
+//             return false;
+            
+//         }
+//         return true;
+//     }
+
+//     public static void main(String[] args) {
+//          Node root = new Node(1);
+//          root.left = new Node(2);
+//          root.right = new Node(3);
+//          root.left.left = new Node(4);
+//          root.left.right = new Node(5);
+//          root.right.left = new Node(6);
+//          root.right.right = new Node(7);
+
+//          Node Subroot = new Node(2);
+//          Subroot.left = new Node(4);
+//          Subroot.right = new Node(5);
+//          System.out.println(isSubTree(root, Subroot));
+// }
+// }
+
 import java.util.*;
 public class trees {
     public static class Node{
@@ -778,7 +839,7 @@ public class trees {
 
          Node Subroot = new Node(2);
          Subroot.left = new Node(4);
-         Subroot.right = new Node(5);
+        //git  Subroot.right = new Node(5);
          System.out.println(isSubTree(root, Subroot));
 }
 }
