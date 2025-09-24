@@ -883,7 +883,67 @@
 
 // LOWEST COMMON ANCESTOR
 
-import java.util.*;
+// import java.util.*;
+// public class trees {
+//     public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public Node(int val){
+//             this.val = val;
+//         }
+//     }
+//     public static Node lca(Node root , int n1 ,int n2){
+//         ArrayList<Node> path1 = new ArrayList<>();
+//         ArrayList<Node> path2 = new ArrayList<>();
+//         getpath(root ,n1 , path1);
+//         getpath(root , n2 , path2);
+//         int i=0;
+//         for(; i<path1.size() && i<path2.size();i++){
+//             if (path1.get(i)!= path2.get(i)) {
+//                 break;
+                
+//             }
+//         }
+//         Node lca = (path1.get(i-1));
+//         return lca;
+//     }
+//     public static boolean getpath(Node root , int n , ArrayList<Node> path){
+//         if (root==null) {
+//             return false;
+            
+//         }
+//         path.add(root);
+//         if (root.val == n) {
+//             return true;
+            
+//         }
+//        boolean foundleft =getpath(root.left, n, path);
+//        boolean foundright = getpath(root.right, n, path);
+//        if (foundleft || foundright) {
+//         return true;
+        
+//        }
+//        path.remove(path.size()-1);
+//        return false;
+//     }
+
+//     public static void main(String[] args) {
+//      Node root = new Node(1);
+//      root.left = new Node(2);
+//      root.right = new Node(3);
+//      root.left.left = new Node(4);
+//      root.left.right  =  new Node(5);
+//      root.right.left = new Node(6);
+//      root.right.right = new Node(7);  
+//      int n1 = 4 , n2 = 7;
+//      System.out.println(lca(root, n1, n2).val);
+//     }
+// }
+
+// MINIMUM DISTANCE BETWEEN TWO NODES
+
+ import java.util.*;
 public class trees {
     public static class Node{
         int val;
@@ -893,7 +953,7 @@ public class trees {
             this.val = val;
         }
     }
-    public static Node lca(Node root , int n1 ,int n2){
+     public static Node lca2(Node root , int n1 ,int n2){
         ArrayList<Node> path1 = new ArrayList<>();
         ArrayList<Node> path2 = new ArrayList<>();
         getpath(root ,n1 , path1);
@@ -908,7 +968,7 @@ public class trees {
         Node lca = (path1.get(i-1));
         return lca;
     }
-    public static boolean getpath(Node root , int n , ArrayList<Node> path){
+     public static boolean getpath(Node root , int n , ArrayList<Node> path){
         if (root==null) {
             return false;
             
@@ -928,7 +988,34 @@ public class trees {
        return false;
     }
 
-    public static void main(String[] args) {
+    public static int lcadist(Node root , int n){
+        if (root==null) {
+            return-1;
+            
+        }
+        if (root.val == n) {
+            return 0;
+            
+        }
+        int leftdis = lcadist(root.left, n);
+        int rightdis = lcadist(root.right, n);
+        if (leftdis==-1 && rightdis==-1) {
+            return-1;
+            
+        }else if (leftdis==-1) {
+            return rightdis+1;
+            
+        }else{
+            return leftdis+1;
+        }
+    }
+    public static int minDistance(Node root , int n1 , int n2){
+        Node lca = lca2(root, n1, n2);
+        int dist1 = lcadist(lca , n1);
+        int dist2 = lcadist(lca , n2);
+        return dist1 + dist2;
+    }
+public static void main(String[] args) {
      Node root = new Node(1);
      root.left = new Node(2);
      root.right = new Node(3);
@@ -936,7 +1023,10 @@ public class trees {
      root.left.right  =  new Node(5);
      root.right.left = new Node(6);
      root.right.right = new Node(7);  
-     int n1 = 4 , n2 = 7;
-     System.out.println(lca(root, n1, n2).val);
-    }
+     int n1 = 5, n2 =7;
+     System.out.println(minDistance(root, n1, n2));
 }
+}
+
+
+
