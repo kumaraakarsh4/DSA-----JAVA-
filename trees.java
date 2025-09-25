@@ -1160,24 +1160,27 @@ public class trees {
         System.out.print(root.val + " ");
         inOrder(root.right);
     }
-
-    public static  boolean search(Node root , int key){
-        if (root==null) {
-            return false;
+    public static void printInRange(Node root , int k1 ,  int k2){
+        if (root == null) {
+            return;
             
         }
-        if (root.val==key) {
-            return true;
+        if (root.val >= k1 && root.val <= k2) {
+            printInRange(root.left, k1, k2);
+            System.out.print(root.val + " ") ;
+            printInRange(root.right, k1, k2);
             
         }
-        if (root.val > key) {
-            return search(root.left, key);
+        else if (root.val < k1) {
+            printInRange(root.right, k1, k2);
             
         }
         else{
-            return search(root.right, key);
+            printInRange(root.left, k1, k2);
         }
     }
+
+    
 public static void main(String[] args) {
      int values[] = {1,3,6,8,9,5,4,10,2,7};
      Node root = null;
@@ -1186,14 +1189,8 @@ public static void main(String[] args) {
         }
         inOrder(root);
         System.out.println();
+      printInRange(root, 3, 7);
+    }
+}
    
     
-     if (search(root, 10)) {
-        System.out.println("Found");
-        
-     }else{
-        System.out.println("Not found");
-     }
-    
-}
-}
