@@ -1029,7 +1029,55 @@
 // }
 
 // KTH ANCESTOR OF A NODE
- import java.security.PublicKey;
+//  import java.security.PublicKey;
+// import java.util.*;
+// public class trees {
+//     public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public Node(int val){
+//             this.val = val;
+//         }
+//     }
+//     public static int KAncestor(Node root , int n ,int k){
+//         if (root==null) {
+//             return -1;
+            
+//         }
+//         if (root.val ==n) {
+//             return 0;
+            
+//         }
+//        int leftdis = KAncestor(root.left, n, k);
+//          int rightdis = KAncestor(root.right, n, k);
+//         if (leftdis == -1 && rightdis ==-1) {
+//             return -1;
+            
+//         }
+//         int max = Math.max(leftdis, rightdis);
+//         if (max+1 == k) {
+//             System.out.println(root.val);
+            
+//         }
+//         return max +1;
+//     }
+
+// public static void main(String[] args) {
+//      Node root = new Node(1);
+//      root.left = new Node(2);
+//      root.right = new Node(3);
+//      root.left.left = new Node(4);
+//      root.left.right  =  new Node(5);
+//      root.right.left = new Node(6);
+//      root.right.right = new Node(7);  
+//      int n =4 , k=2;
+//      KAncestor(root, n, k);
+// }
+// }
+
+// CONSTRUCTION OF BINARY SEARCH TREE
+
 import java.util.*;
 public class trees {
     public static class Node{
@@ -1040,40 +1088,38 @@ public class trees {
             this.val = val;
         }
     }
-    public static int KAncestor(Node root , int n ,int k){
-        if (root==null) {
-            return -1;
+    public static Node insert(Node root , int var){
+        if (root == null) {
+            root = new Node(var);
+           return root;
             
         }
-        if (root.val ==n) {
-            return 0;
+        if (root.val > var) {
+            root.left = insert(root.left, var);
             
+        }else{
+            root.right = insert(root.right, var);
         }
-       int leftdis = KAncestor(root.left, n, k);
-         int rightdis = KAncestor(root.right, n, k);
-        if (leftdis == -1 && rightdis ==-1) {
-            return -1;
-            
-        }
-        int max = Math.max(leftdis, rightdis);
-        if (max+1 == k) {
-            System.out.println(root.val);
-            
-        }
-        return max +1;
+        return root;
     }
+    public static void inOrder(Node root){
+        if (root == null) {
+            return;
+            
+        }
+        inOrder(root.left);
+        System.out.print(root.val + " ");
+        inOrder(root.right);
+    }
+    public static void main(String[] args) {
+        int values[] = {5,1,3,4,2,7};
+        Node root = null;
+        for(int i=0;i<values.length;i++){
+           root =  insert(root, values[i]);
+        }
+        inOrder(root);
 
-public static void main(String[] args) {
-     Node root = new Node(1);
-     root.left = new Node(2);
-     root.right = new Node(3);
-     root.left.left = new Node(4);
-     root.left.right  =  new Node(5);
-     root.right.left = new Node(6);
-     root.right.right = new Node(7);  
-     int n =4 , k=2;
-     KAncestor(root, n, k);
+        
+    }
 }
-}
-
 
