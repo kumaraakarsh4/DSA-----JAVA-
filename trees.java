@@ -1160,36 +1160,38 @@ public class trees {
         System.out.print(root.val + " ");
         inOrder(root.right);
     }
-  public static void printLeaf(Node root , ArrayList<Integer> path){
+ public static boolean validate(Node root , Node min , Node max){
     if (root == null) {
-        return;
+        return true;
         
     }
-    path.add(root.val);
-    if (root.left == null && root.right == null) {
-        printPath(path);
+    if (min!= null && root.val <= min.val) {
+        return  false;
+
+        
+    }else if (max!=null && root.val >= max.val) {
+        return false;
         
     }
-    printLeaf(root.left, path);
-    printLeaf(root.right, path);
-    path.remove(path.size()-1);
-  }
-  public static void printPath(ArrayList<Integer> path){
-    for(int i=0;i<path.size();i++){
-        System.out.print(path.get(i) + " ");
-    }
-    System.out.println("Null");
-  }
+    return validate(root.left, min, root) &&
+    validate(root.right, root, max);
+
+ }
     
 public static void main(String[] args) {
-     int values[] = {8,5,3,6,10,11,14};
+     int values[] = {1,1,1};
      Node root = null;
        for(int i=0;i<values.length;i++){
            root =  insert(root, values[i]);
         }
         inOrder(root);
         System.out.println();
-     printLeaf(root, new ArrayList<>());
+   if (validate(root, null, null)) {
+    System.out.println("valid");
+    
+   }else{
+    System.out.println("Not valid");
+   }
     }
 }
    
