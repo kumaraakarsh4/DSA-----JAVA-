@@ -1078,7 +1078,56 @@
 
 // CONSTRUCTION OF BINARY SEARCH TREE
 
+// import java.util.*;
+// public class trees {
+//     public static class Node{
+//         int val;
+//         Node left;
+//         Node right;
+//         public Node(int val){
+//             this.val = val;
+//         }
+//     }
+//     public static Node insert(Node root , int var){
+//         if (root == null) {
+//             root = new Node(var);
+//            return root;
+            
+//         }
+//         if (root.val > var) {
+//             root.left = insert(root.left, var);
+            
+//         }else{
+//             root.right = insert(root.right, var);
+//         }
+//         return root;
+//     }
+//     public static void inOrder(Node root){
+//         if (root == null) {
+//             return;
+            
+//         }
+//         inOrder(root.left);
+//         System.out.print(root.val + " ");
+//         inOrder(root.right);
+//     }
+//     public static void main(String[] args) {
+//         int values[] = {1,3,6,8,9,5,4,10,2,7};
+//         Node root = null;
+//         for(int i=0;i<values.length;i++){
+//            root =  insert(root, values[i]);
+//         }
+//         inOrder(root);
+
+        
+//     }
+// }
+// SEARCHING IN BINARY SEARCH TREE
+
+
 import java.util.*;
+
+
 public class trees {
     public static class Node{
         int val;
@@ -1088,7 +1137,7 @@ public class trees {
             this.val = val;
         }
     }
-    public static Node insert(Node root , int var){
+      public static Node insert(Node root , int var){
         if (root == null) {
             root = new Node(var);
            return root;
@@ -1111,15 +1160,40 @@ public class trees {
         System.out.print(root.val + " ");
         inOrder(root.right);
     }
-    public static void main(String[] args) {
-        int values[] = {1,3,6,8,9,5,4,10,2,7};
-        Node root = null;
-        for(int i=0;i<values.length;i++){
+
+    public static  boolean search(Node root , int key){
+        if (root==null) {
+            return false;
+            
+        }
+        if (root.val==key) {
+            return true;
+            
+        }
+        if (root.val > key) {
+            return search(root.left, key);
+            
+        }
+        else{
+            return search(root.right, key);
+        }
+    }
+public static void main(String[] args) {
+     int values[] = {1,3,6,8,9,5,4,10,2,7};
+     Node root = null;
+       for(int i=0;i<values.length;i++){
            root =  insert(root, values[i]);
         }
         inOrder(root);
-
+        System.out.println();
+   
+    
+     if (search(root, 10)) {
+        System.out.println("Found");
         
-    }
+     }else{
+        System.out.println("Not found");
+     }
+    
 }
-
+}
