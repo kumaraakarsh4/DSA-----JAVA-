@@ -1151,50 +1151,55 @@ public class trees {
         }
         return root;
     }
-    public static void inOrder(Node root){
+    public static void inOrder(Node root , ArrayList<Integer> order){
         if (root == null) {
             return;
             
         }
-         System.out.print(root.val + " ");
-        inOrder(root.left);
-       
-        inOrder(root.right);
+          inOrder(root.left, order);
+          order.add(root.val);
+          inOrder(root.right, order);
     }
- public static boolean validate(Node root , Node min , Node max){
-    if (root == null) {
-        return true;
-        
-    }
-    if (min!= null && root.val <= min.val) {
-        return  false;
-
-        
-    }else if (max!=null && root.val >= max.val) {
-        return false;
-        
-    }
-    return validate(root.left, min, root) &&
-    validate(root.right, root, max);
-
+ public static Node balanceTree(Node root){
+    ArrayList<Integer> order = new ArrayList<>();
+    inOrder(root, order);
+    root = bst(order, 0, order.size()-1);
+    return root;
+    
  }
- public static Node bst(int arr[] ,int st ,int end){
+ 
+ public static Node bst(ArrayList<Integer> order ,int st ,int end){
     if (st > end) {
         return null;
         
     }
     int mid = (st+end)/2;
-    Node root = new Node(arr[mid]);
-    root.left = bst(arr, st, mid-1);
-    root.right = bst(arr, mid+1, end);
+    Node root = new Node(order.get(mid));
+    root.left = bst(order, st, mid-1);
+    root.right = bst(order, mid+1, end);
     return root;
 
  }
+ public static void preOrder(Node root){
+    if (root==null) {
+        return;
+        
+    }
+    System.out.print(root.val + " ");
+    preOrder(root.left);
+    preOrder(root.right);
+ }
     
 public static void main(String[] args) {
-     int arr[] = {3,5,6,8,10,11,12};
-    Node root = bst(arr, 0, arr.length-1);
-   inOrder(root);
+ Node root = new Node(8);
+ root.left = new Node(6);
+ root.left.left = new Node(5);
+ root.left.left.left = new Node(3);
+ root.right = new Node(10);
+ root.right.right = new Node(11);
+ root.right.right.right = new Node(12);
+ root = balanceTree(root);
+preOrder(root);
     }
 }
    

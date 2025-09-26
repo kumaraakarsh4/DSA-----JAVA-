@@ -1,1 +1,1 @@
-Subroot.right = new Node(6);
+root
