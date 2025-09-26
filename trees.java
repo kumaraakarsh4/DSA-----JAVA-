@@ -1189,17 +1189,44 @@ public class trees {
     preOrder(root.left);
     preOrder(root.right);
  }
-    
+    public static Node mergeBts(Node root1 , Node root2){
+        ArrayList<Integer> order = new ArrayList<>();
+        inOrder(root1, order);
+        ArrayList<Integer> order2 = new ArrayList<>();
+        inOrder(root2, order2);
+        int i=0 , j=0;
+        ArrayList<Integer> finalarr = new ArrayList<>();
+        while (i<order.size() && j<order2.size()) {
+            if (order.get(i) <= order2.get(j)) {
+                finalarr.add(order.get(i));
+                i++;
+                
+            }else{
+                finalarr.add(order2.get(j));
+                j++;
+            }
+            
+        }
+        while (i<order.size()) {
+           finalarr.add(order.get(i));
+                i++;  
+            
+        }
+        while (j<order2.size()) {
+              finalarr.add(order2.get(j));
+                j++;
+        }
+       return bst(finalarr, 0, finalarr.size()-1);
+    }
 public static void main(String[] args) {
- Node root = new Node(8);
- root.left = new Node(6);
- root.left.left = new Node(5);
- root.left.left.left = new Node(3);
- root.right = new Node(10);
- root.right.right = new Node(11);
- root.right.right.right = new Node(12);
- root = balanceTree(root);
-preOrder(root);
+ Node root1 = new Node(2);
+ root1.left = new Node(1);
+ root1.right = new Node(4);
+Node root2 = new Node(9);
+root2.left = new Node(3);
+root2.right = new Node(12);
+ Node root = mergeBts(root1, root2);
+ preOrder(root);
     }
 }
    
