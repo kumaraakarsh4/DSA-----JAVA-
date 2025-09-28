@@ -27,7 +27,7 @@ public class Heaps {
             arr.add(data);
             int x = arr.size()-1;
             int par = (x-1)/2;
-            while (x> 0  && arr.get(x) < arr.get(par)) {
+            while (x> 0  && arr.get(x) > arr.get(par)) {
                 int temp = arr.get(x);
                 arr.set(x,arr.get(par));
                 arr.set(par ,temp);
@@ -56,11 +56,11 @@ public class Heaps {
             int left = 2*i+1;
             int right = 2*i+2;
             int mindix = i;
-            if (left < arr.size() && arr.get(left )  <  arr.get(mindix)  ) {
+            if (left < arr.size() && arr.get(left )  >  arr.get(mindix)  ) {
                 mindix = left;
                 
             }
-            if (right < arr.size() &&  arr.get(right) < arr.get(mindix)  ) {
+            if (right < arr.size() &&  arr.get(right) > arr.get(mindix)  ) {
                 mindix = right;
                 
             }
