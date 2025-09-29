@@ -226,23 +226,63 @@
 
 //  CONNCECT N ROPES QUESTION
 
+// import java.util.*;
+// public class Heaps {
+
+//     public static void main(String[] args) {
+//         int ropes[] ={2,3,5,4,9,6};
+//         PriorityQueue<Integer> pq = new PriorityQueue<>();
+//         for(int i=0;i<ropes.length;i++){
+//             pq.add(ropes[i]);
+//         }
+//         int cost =0;
+//         while (pq.size()  > 1) {
+//             int min = pq.remove();
+//             int min2 = pq.remove();
+//             cost+= min+min2;
+//             pq.add(min+min2);
+            
+//         }
+//         System.out.println("My cost connecting ropes is equal to :- " + cost);
+//     }
+// }
+
+// WEAKEST SOLDIER QUESTION
+
 import java.util.*;
 public class Heaps {
+    static class Row implements Comparable<Row>{
+        int Soldier;
+        int indx;
+        public Row(int Soldier , int indx){
+            this.Soldier = Soldier;
+            this.indx = indx;
+        }
+        @Override 
+        public int compareTo(Row r2){
+            if (this.Soldier== r2.Soldier) {
+                return this.indx - r2.indx;
+                
+            }else{
+                return this.Soldier - r2.Soldier;
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        int ropes[] ={2,3,5,4,9,6};
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for(int i=0;i<ropes.length;i++){
-            pq.add(ropes[i]);
+        int army [][] = {{1,0,0,0},
+        {1,1,1,1},{1,0,0,0},{1,0,0,0}};
+        int k =2;
+        PriorityQueue<Row> pq = new PriorityQueue<>();
+        for(int i=0;i<army.length;i++){
+            int count =0;
+            for(int j=0;j<army[0].length;j++){
+                count += army[i][j] ==1 ? 1:0;
+            }
+            pq.add(new Row(count, i));
         }
-        int cost =0;
-        while (pq.size()  > 1) {
-            int min = pq.remove();
-            int min2 = pq.remove();
-            cost+= min+min2;
-            pq.add(min+min2);
-            
+        for(int i=0;i<k;i++){
+            System.out.println("R" + pq.remove().indx);
         }
-        System.out.println("My cost connecting ropes is equal to :- " + cost);
     }
 }
