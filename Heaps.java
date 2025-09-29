@@ -189,37 +189,60 @@
 
 // NEARBY CARS QUESTION
 
+// import java.util.*;
+// public class Heaps {
+//      static class point implements Comparable<point>{
+//         int x;
+//         int y;
+//         int dissq;
+//         int indx;
+//         public point(int x ,int y , int dissq , int indx){
+//             this.x = x;
+//             this.y = y;
+//             this.dissq = dissq;
+//             this.indx = indx;
+//         }
+//         @Override
+//         public int compareTo(point p2){
+//             return this.dissq- p2.dissq;
+//         }
+
+//      }
+
+//     public static void main(String[] args) {
+//         int arr [][] = {{3,3} , {5,-1} , {-2,4}};
+//         int k =2;
+//         PriorityQueue<point> pq = new PriorityQueue<>();
+//         for(int i=0;i<arr.length;i++){
+//             int dissq = arr[i][0] * arr[i][0] + arr[i][1]* arr[i][1];
+//             pq.add(new point(arr[i][0], arr[i][1],dissq ,  i));
+//         }
+//         for(int i=0;i<k;i++){
+//             System.out.println("c" + pq.remove().indx);
+//         }
+
+//     }
+// }
+
+//  CONNCECT N ROPES QUESTION
+
 import java.util.*;
 public class Heaps {
-     static class point implements Comparable<point>{
-        int x;
-        int y;
-        int dissq;
-        int indx;
-        public point(int x ,int y , int dissq , int indx){
-            this.x = x;
-            this.y = y;
-            this.dissq = dissq;
-            this.indx = indx;
-        }
-        @Override
-        public int compareTo(point p2){
-            return this.dissq- p2.dissq;
-        }
-
-     }
 
     public static void main(String[] args) {
-        int arr [][] = {{3,3} , {5,-1} , {-2,4}};
-        int k =2;
-        PriorityQueue<point> pq = new PriorityQueue<>();
-        for(int i=0;i<arr.length;i++){
-            int dissq = arr[i][0] * arr[i][0] + arr[i][1]* arr[i][1];
-            pq.add(new point(arr[i][0], arr[i][1],dissq ,  i));
+        int ropes[] ={2,3,5,4,9,6};
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for(int i=0;i<ropes.length;i++){
+            pq.add(ropes[i]);
         }
-        for(int i=0;i<k;i++){
-            System.out.println("c" + pq.remove().indx);
+        int cost =0;
+        while (pq.size()  > 1) {
+            int min = pq.remove();
+            int min2 = pq.remove();
+            cost+= min+min2;
+            pq.add(min+min2);
+            
         }
-
+        System.out.println("My cost connecting ropes is equal to :- " + cost);
     }
 }
